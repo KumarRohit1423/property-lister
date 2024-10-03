@@ -3,7 +3,7 @@
 import {
   deletePreviousForgotPasswordTokens,
   getForgotPasswordTokenByToken,
-} from "@/data/forgot-password-token";
+} from "@/data/token";
 import { getUserByEmail } from "@/data/user";
 import { prisma } from "@/prisma";
 import { EmailSchema, ResetPasswordSchema } from "@/schemas/schema";
