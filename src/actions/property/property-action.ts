@@ -14,7 +14,8 @@ export async function getProperties(page = 1, limit = 9) {
     const total = await prisma.property.count();
     return { properties, total };
   } catch (error) {
-    return { error: "Failed to fetch properties" };
+    console.error(error);
+    return { error: "An error occurred while fetching properties" };
   }
 }
 
@@ -25,6 +26,7 @@ export async function getPropertyById(id: string) {
     });
     return { property };
   } catch (error) {
-    return { error: "Failed to fetch property" };
+    console.error(error);
+    return { error: "An error occurred while fetching property" };
   }
 }

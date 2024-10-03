@@ -23,7 +23,11 @@ export default async function PropertyPage({
 }: {
   params: { id: string };
 }) {
-  const { property, error } = await getPropertyById(params.id);
+  const result = await getPropertyById(params.id);
+  if (!result || !result.property) {
+    notFound();
+  }
+  const { property, error } = result;
 
   if (error || !property) {
     notFound();

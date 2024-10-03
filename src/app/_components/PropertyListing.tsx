@@ -2,7 +2,10 @@ import { getProperties } from "@/actions/property/property-action";
 import PropertyList from "@/app/_components/PropertyList";
 
 export default async function PropertyListing() {
-  const { properties, total, error } = await getProperties();
+  const result = await getProperties();
+  const properties = result?.properties ?? [];
+  const total = result?.total ?? 0;
+  const error = result?.error;
 
   if (error) {
     return <div>Error: {error}</div>;

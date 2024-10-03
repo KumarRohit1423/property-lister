@@ -2,6 +2,7 @@
 
 import AuthSuccessCard from "@/app/auth/success/_components/auth-success-card";
 import { redirect, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function AuthSuccessPage() {
   const searchParams = useSearchParams();
@@ -13,13 +14,15 @@ export default function AuthSuccessPage() {
     redirect("/auth");
   }
   return (
-    <div className="flex items-center justify-center">
-      <AuthSuccessCard
-        title={data.title}
-        description={data.description}
-        redirectPage={data.redirectPage}
-        redirectPageUrl={data.redirectPageUrl}
-      />
-    </div>
+    <Suspense>
+      <div className="flex items-center justify-center">
+        <AuthSuccessCard
+          title={data.title}
+          description={data.description}
+          redirectPage={data.redirectPage}
+          redirectPageUrl={data.redirectPageUrl}
+        />
+      </div>
+    </Suspense>
   );
 }

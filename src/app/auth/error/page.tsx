@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { AlertCircle } from "lucide-react";
+import { Alert, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,9 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Alert, AlertTitle } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
+import { AlertCircle } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 type ErrorType =
   | "Configuration"
@@ -58,35 +59,37 @@ export default function AuthErrorPage() {
 
   return (
     <div className="flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="pb-0">
-          <div className="flex justify-center">
-            <AlertCircle className="h-16 w-16 text-destructive" />
-          </div>
-        </CardHeader>
-        <CardContent className="text-center">
-          <CardTitle className="mb-4 text-2xl font-bold">
-            Authentication Error
-          </CardTitle>
-          <Alert variant="destructive" className="border-0">
-            <AlertTitle>{errorMessage}</AlertTitle>
-          </Alert>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Error code:{" "}
-            <code className="rounded-sm bg-muted px-1 py-0.5 font-mono text-sm">
-              {errorType}
-            </code>
-          </p>
-        </CardContent>
-        <CardFooter className="flex flex-col gap-2">
-          <Button asChild className="w-full">
-            <Link href="/auth">Try Again</Link>
-          </Button>
-          <Button asChild variant="outline" className="w-full">
-            <Link href="/">Return to Home</Link>
-          </Button>
-        </CardFooter>
-      </Card>
+      <Suspense>
+        <Card className="w-full max-w-md">
+          <CardHeader className="pb-0">
+            <div className="flex justify-center">
+              <AlertCircle className="h-16 w-16 text-destructive" />
+            </div>
+          </CardHeader>
+          <CardContent className="text-center">
+            <CardTitle className="mb-4 text-2xl font-bold">
+              Authentication Error
+            </CardTitle>
+            <Alert variant="destructive" className="border-0">
+              <AlertTitle>{errorMessage}</AlertTitle>
+            </Alert>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Error code:{" "}
+              <code className="rounded-sm bg-muted px-1 py-0.5 font-mono text-sm">
+                {errorType}
+              </code>
+            </p>
+          </CardContent>
+          <CardFooter className="flex flex-col gap-2">
+            <Button asChild className="w-full">
+              <Link href="/auth">Try Again</Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full">
+              <Link href="/">Return to Home</Link>
+            </Button>
+          </CardFooter>
+        </Card>
+      </Suspense>
     </div>
   );
 }

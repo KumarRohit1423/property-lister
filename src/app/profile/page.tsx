@@ -66,9 +66,9 @@ export default async function ProfilePage() {
               {user.name} is a regular viewer of this Property Listers website.
               Passionate about learning new things and sharing my experiences. I
               love exploring different cultures, trying new foods, and
-              discovering hidden gems. As a lover of luxury real estate, I'm
-              always on the lookout for the next big thing in the property
-              market. Let's connect!
+              discovering hidden gems. As a lover of luxury real estate,
+              I&apos;m always on the lookout for the next big thing in the
+              property market. Let&apos;s connect!
             </p>
           </div>
         </CardContent>

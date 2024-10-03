@@ -4,6 +4,7 @@
     "prefer-arrow-callback": ["error"],
     "semi": ["error"],
     "prefer-template": ["error"],
-    "quotes": ["error", "double"]
+    "quotes": ["error", "double"],
+    "no-unused-vars": "off"
   }
 }
