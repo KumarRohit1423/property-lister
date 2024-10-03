@@ -11,7 +11,6 @@ export default async function Home() {
   return (
     <>
       <PropertyListing />
-      {/* <Button onClick={() => populateUp()}>Populate</Button> */}
     </>
   );
 }

@@ -14,8 +14,8 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Easy Events",
-  description: "A simple event listing and management app",
+  title: "Property Listers",
+  description: "A website to list Luxury Properties",
 };
 
 export default function RootLayout({

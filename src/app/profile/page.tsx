@@ -1,3 +1,4 @@
+import RandomProfileImage from "@/assets/profile.jpeg";
 import { auth } from "@/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -10,7 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import RandomProfileImage from "@/public/profile.jpeg";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 

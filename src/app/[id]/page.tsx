@@ -1,4 +1,4 @@
-import LuxuryPropertyImage from "@/public/PropertyImage.jpg";
+import LuxuryPropertyImage from "@/assets/PropertyImage.jpg";
 
 import { trackView } from "@/actions/property/click-tracking-action";
 import { getPropertyById } from "@/actions/property/property-action";

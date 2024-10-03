@@ -1,6 +1,6 @@
+import LuxuryPropertyImage from "@/assets/PropertyImage.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import LuxuryPropertyImage from "@/public/PropertyImage.jpg";
 import { MapPin, Ruler, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
